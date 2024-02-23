@@ -36,11 +36,11 @@ body{
     .up{
         top: 0.5rem;
         left: 50%;
-        transform: translateX(-2rem);
+        transform: translateX(-1rem);
     }
     .down{
         bottom: 0.5rem;
         left: 50%;
-        transform: translateX(-2rem);
+        transform: translateX(-1rem);
     }
 }

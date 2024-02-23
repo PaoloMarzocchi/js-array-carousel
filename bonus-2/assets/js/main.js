@@ -3,7 +3,7 @@
     //    -creo un array contenente le immagini
 const imgList = ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg'];
     //    -seleziono il tag che contiene le immagini
-const slider = document.querySelector('.carousel');
+const slider = document.querySelector('.current_img');
     //    -creo una variabile come segnaposto che mi servirà per spostare la classe active tra le immagini
 let activeImg = 0;
     //    -ciclo per scorrere nell'array d'immagini e sostituire sequenzialmente la classe active
@@ -33,7 +33,7 @@ up.addEventListener('click', function(){
     //console.log(imgElement);
     imgElement.classList.remove("active");
     //console.log(imgElement.classList);
-    let allImg = document.querySelectorAll('.carousel img');
+    let allImg = document.querySelectorAll('.current_img img');
     //console.log(allImg);
     allImg[activeImg].classList.add("active");
 
