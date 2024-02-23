@@ -4,3 +4,43 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: rgba(0, 0, 0, 0.699);
+}
+
+.slider{
+    width: 70%;
+    max-width: 50rem;
+    margin: 0 auto;
+    position: relative;
+
+    .active{
+        display: block;
+    }
+
+    & img{
+        max-width: 100%;
+        display: none;
+    }
+
+    button{
+        border: none;
+        background-color: rgba(255, 255, 255, 0.185);
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        
+    }
+
+    .up{
+        top: 0;
+        left: 50%;
+        transform: translateX(-2rem);
+    }
+    .down{
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-2rem);
+    }
+}
