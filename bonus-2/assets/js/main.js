@@ -12,7 +12,7 @@ let activeImg = 0;
 for (let i = 0; i < imgList.length; i++) {
     const img = imgList[i];
     //console.log(img);
-    let imgMarkup = `<img class="${i === activeImg ? "active" : ""}" src="./assets/img/${img}" alt=""></img>`;
+    let imgMarkup = `<img class="${i === activeImg ? "active" : "d_none"}" src="./assets/img/${img}" alt=""></img>`;
     //console.log(imgMarkup);
     slider.insertAdjacentHTML('beforeend', imgMarkup);
 }
@@ -32,10 +32,12 @@ up.addEventListener('click', function(){
     let imgElement = document.querySelector('img.active');
     //console.log(imgElement);
     imgElement.classList.remove("active");
+    imgElement.classList.add("d_none");
     //console.log(imgElement.classList);
     let allImg = document.querySelectorAll('.current_img img');
     //console.log(allImg);
     allImg[activeImg].classList.add("active");
+    allImg[activeImg].classList.remove('d_none');
 
 })
 
@@ -49,8 +51,10 @@ down.addEventListener('click', function(){
     let imgElement = document.querySelector('img.active');
     //console.log(imgElement);
     imgElement.classList.remove("active");
+    imgElement.classList.add("d_none");
     //console.log(imgElement.classList);
-    let allImg = document.querySelectorAll('.carousel img');
+    let allImg = document.querySelectorAll('.current_img img');
     //console.log(allImg);
     allImg[activeImg].classList.add("active");
+    allImg[activeImg].classList.remove('d_none');
 })
