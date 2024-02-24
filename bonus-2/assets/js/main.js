@@ -16,7 +16,7 @@ for (let i = 0; i < imgList.length; i++) {
     const img = imgList[i];
     //console.log(img);
     let currentImgMarkup = `<img class="${i === activeImg ? "active" : "d_none"}" src="./assets/img/${img}" alt=""></img>`;
-    let shownImgMarkup = `<img class="${i === activeImg ? "shown" : "unshown"}" src="./assets/img/${img}" alt=""></img>`;
+    let shownImgMarkup = `<img class=" ${i === activeImg ? "shown" : "unshown"}" src="./assets/img/${img}" alt=""></img>`;
     //console.log(shownImgMarkup);
     slider.insertAdjacentHTML('beforeend', currentImgMarkup);
     thumbElement.insertAdjacentHTML('beforeend', shownImgMarkup);
@@ -27,7 +27,7 @@ console.log(thumbElement);
 const up = document.querySelector('.up');
 const down = document.querySelector('.down');
 
-up.addEventListener('click', function(){
+down.addEventListener('click', function(){
     activeImg++;
 
     if (activeImg > imgList.length -1) {
@@ -62,7 +62,7 @@ up.addEventListener('click', function(){
 
 })
 
-down.addEventListener('click', function(){
+up.addEventListener('click', function(){
     activeImg--;
     if (activeImg < 0) {
         activeImg = imgList.length -1;
