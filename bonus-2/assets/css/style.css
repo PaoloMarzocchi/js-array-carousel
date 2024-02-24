@@ -2,26 +2,43 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
+
 }
 
-body{
+body {
     background-color: rgba(0, 0, 0, 0.699);
 }
 
-.d_none{
-    display: none;
+.d_none {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    filter: opacity(0);
+    transition: filter 0.5s ease-in-out;
+}
+.active {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    filter: opacity(1);
+    transition: filter 0.5s ease-in-out;
 }
 
-.shown{
+
+.shown {
     border: 2px solid lightseagreen;
+    filter: brightness(1);
+    transition: filter 0.3s linear;
 }
 
-.unshown{
+.unshown {
     filter: brightness(0.2);
+    transition: filter 0.3s linear;
 }
 
-.slider{
+.slider {
     width: 80%;
     max-width: 37.5rem;
     max-height: 17.5rem;
@@ -29,57 +46,59 @@ body{
     overflow-y: hidden;
     overflow-x: hidden;
     display: flex;
-    justify-content: space-between;
 
-    .active{
-        display: block;
-    }
+    
 
-    & img{
+
+    & img {
         max-height: 100%;
     }
 
-    .current_img{
+    .current_img {
         width: calc(100% - 6.5rem);
         max-width: calc(100% - 6.5rem);
-        
+        position: relative;
     }
-    .list_img{
+
+
+    .list_img {
         width: 6.5rem;
         flex-shrink: 0;
         position: relative;
-        
-        
 
-        .carousel{
+
+
+        .carousel {
             height: 17.5rem;
             max-height: 17.5rem;
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
 
-            & img{
+            & img {
                 height: calc(100% /6);
             }
         }
     }
 
-    button{
+    button {
         border: none;
         background-color: rgba(255, 255, 255, 0.185);
         position: absolute;
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
-        
+        cursor: pointer;
+
     }
-    
-    .up{
+
+    .up {
         top: 0.5rem;
         right: 50%;
         transform: translateX(1rem);
     }
-    .down{
+
+    .down {
         bottom: 0.5rem;
         right: 50%;
         transform: translateX(1rem);
